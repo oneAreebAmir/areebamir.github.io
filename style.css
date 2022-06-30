@@ -1,0 +1,686 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,500;0,700;1,300&display=swap');
+
+/* Universal Selector Sets */
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+/* Coolor Sets */
+:root{
+    --color1: #1a0f0f;
+    --color2:#666;
+    --color3: #555;
+    --color4:#fff;
+    --color5: rgb(236, 229, 229);
+    --color6:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --color7: #eee;
+    --color8:#eed9d9;
+}
+
+/* HTML Sets */
+html{
+    font-size: 65%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+/* Setting Heading, Paagraph Fonts and link */
+h1{
+    font-size: 5rem;
+    color: var(--color1);
+}
+
+h4{
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--color1);
+}
+h5{
+    font-size: 3rem;
+    font-weight:600;
+    color:var(--color1);
+}
+h6{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color1);
+}
+p{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: justify;
+    color: var(--color1);
+}
+a{
+    text-decoration: underline;
+    font-size: 3rem;
+    color: var(--color1);
+}
+a:hover{
+    color: #04AA6D;
+}
+
+/* Header Element */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color4);
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--color6);
+    border-bottom: 4px solid #04AA6D;
+}
+header .logo{
+    color: var(--color1);
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+header .logo i{
+    color: var(--color3);
+}
+header .navbar a{
+    font-size: 1.8rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color: var(--color2);
+    text-decoration: none;
+}
+header .navbar a:hover,
+header .navbar a.active{
+    background-color: var(--color3);
+    color: var(--color4);
+}
+header .icon i,.button{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    line-height: 3.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--color1);
+    border-radius: 50%;
+    background-color: var(--color5);
+}
+header .icon i{
+    display: none;
+}
+header .icon i:hover, .button:hover{
+    color: var(--color4);
+    background: var(--color3);
+    transform: rotate(360deg);
+    transition: 1.5s;
+}
+/* Section */
+section{
+    padding:2rem 9%;
+}
+/* Home Section Element */
+.home{
+    align-items: center;
+    padding-top: 20rem;
+}
+.wrapper{
+    display: flex;
+}
+.wrapper .static-txt{
+    color: var(--color1);
+    font-size: 60px;
+    font-weight: 400;
+}
+.wrapper .dynamic-txts{
+    margin-left: 15px;
+    margin-top: -4px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+.dynamic-txts li{
+    list-style: none;
+    color: #04AA6D;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+    100%{
+      top: -360px;
+    }
+}
+.dynamic-txts li span{
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+}
+.dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--color7);
+    border-left: 2px solid #04AA6D;
+    animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+    40%, 60%{
+      left: calc(100% + 30px);
+    }
+    100%{
+      left: 0;
+    }
+}
+.container{
+    padding-bottom: 2.33rem;
+    display: flex;
+}
+.container img{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+.container .blog_box{
+    position: relative;
+    text-align: center;
+    margin-left: 2in;
+    height: 250px;
+    width: 310px;
+    border-radius: 15px;
+    background-color: var(--color4);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+}
+.blog_box .new{
+    position: relative;
+    line-height: 3rem;
+    left: 10px;
+    bottom: 10px;
+    transform: rotate(-15deg);
+    font-size: 20px;
+    font-weight: bold;
+    width: 70px;height: 40px;
+    border: 4px solid #04AA6D;
+    border-radius: 50%;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.8);
+}
+.blog_box a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 3.7rem;
+    padding: 0.4rem 3%;
+    background-color: #04AA6D;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.8);
+}
+.blog_box a:hover{
+    padding: 0.7rem 5%;
+    color: var(--color1);
+}
+.blog_box h6{
+    position: absolute;
+    top: 120px;left: 2px;right: 2px;
+    font-size: 2.3rem;
+}
+/* About Section Element */
+.about{
+    padding-top: 15rem;
+}
+.about a{
+    text-decoration: underline;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color1);
+}
+a:hover{
+    color: #04AA6D;
+}
+/* Project Section Element */
+.project{
+    padding-top: 15rem;
+}
+.headingskill{
+    padding-top: 15rem;
+}
+/* Skills Section Element */
+.skills{
+    display: flex;
+    gap: 1rem;
+}
+.skill-bars{
+    padding: 25px 30px;
+    width: 600px;
+    background: var(--color4);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+.skill-bars .bar{
+    margin: 20px 0;
+}
+.skill-bars .bar:first-child{
+    margin-top: 0px;
+}
+.skill-bars .bar .info{
+    margin-bottom: 5px;
+}
+.skill-bars .bar .info span{
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--color1);
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+    100%{
+      opacity: 1;
+    }
+}
+.skill-bars .bar .progress-line{
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+                0 1px rgba(255,255,255,0.8);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+@keyframes animate {
+    100%{
+      transform: scaleX(1);
+    }
+}
+.bar .progress-line span{
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #04AA6D;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+/* For Programming Skill */
+.bar .progress-line.html span{
+    width: 90%;
+}
+.bar .progress-line.css span{
+    width: 70%;
+}
+.bar .progress-line.jquery span{
+    width: 25%;
+}
+.bar .progress-line.python span{
+    width: 65%;
+}
+.bar .progress-line.cpp span{
+    width: 55%;
+}
+.bar .progress-line.js span{
+    width: 45%;
+}
+/* For team work */
+.bar .progress-line.con span{
+    width: 85%;
+}
+.bar .progress-line.ld span{
+    width: 68%;
+}
+.bar .progress-line.com span{
+    width: 85%;
+}
+.bar .progress-line.ls span{
+    width: 75%;
+}
+.bar .progress-line.fd span{
+    width: 75%;
+}
+.bar .progress-line.un span{
+    width: 95%;
+}
+.progress-line span::before{
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+}
+.progress-line span::after{
+    position: absolute;
+    top: -28px;
+    right: 0;
+    font-weight: 1000;
+    background: var(--color8);
+    color: var(--color1);
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+    100%{
+      opacity: 1;
+    }
+}
+/* For Programming Skill */
+.progress-line.html span::after{
+    content: "90%";
+}
+.progress-line.css span::after{
+    content: "70%";
+}
+.progress-line.jquery span::after{
+    content: "25%";
+}
+.progress-line.python span::after{
+    content: "65%";
+}
+.progress-line.cpp span::after{
+    content: "55%";
+}
+.progress-line.js span::after{
+    content: "45%";
+}
+/* For Team Work */
+.progress-line.con span::after{
+    content: "85%";
+}
+.progress-line.ld span::after{
+    content: "68%";
+}
+.progress-line.com span::after{
+    content: "85%";
+}
+.progress-line.ls span::after{
+    content: "75%";
+}
+.progress-line.fd span::after{
+    content: "75%";
+}
+.progress-line.un span::after{
+    content: "95%";
+}
+/* Qualification Section */
+.qualification{
+    padding-top: 15rem;
+}
+.qualification .matric{
+    height: 350px;
+    width: 350px;
+    background: var(--color4);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    border-radius:50%;
+    text-decoration: none;
+    text-align: center;
+}
+.matric h4{
+    position: relative;
+    top: 50%;
+    transform: translate(0%,-50%);
+}
+.qualification .matric:hover{
+    background-color: #04AA6D;
+    width: 360px;
+    height: 360px;
+}
+/* Service Section */
+.service{
+    padding-top: 15rem;
+    padding-bottom:15rem;
+}
+.service .box{
+    cursor: pointer;
+    display: inline-block;
+    margin: 2%;
+    width:200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--color4);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.service h6{
+    position: relative;
+    top: 50%;
+    transform: translate(0%,-50%);
+}
+.service .box:hover{
+    width: 205px;
+    height: 205px;
+    background-color: #04AA6D;
+}
+.service .box .pop{
+    display: none;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    height: 50px;
+    width: 70px;
+    background-color: var(--color7);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+/* Footer Section Element */
+.footer{
+    border-top: 4px solid #04AA6D;
+    padding:2rem 9%;
+    top: 100%;
+    right: 0;left: 0;
+    width: 100%;
+    height: 40rem;
+    background: var(--color4);
+}
+.footer .contact{
+    float: right;
+    padding-top: 7rem;
+    text-align: left;
+}
+.contact .verify{
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    background-color: var(--color7);
+    border: 2px solid #04AA6D;
+}
+.footer .touchbar{
+    display:flex;
+}
+.touchbar i{
+    padding: 5px;
+    font-size: 4rem;
+}
+.copyright{
+    text-align: center;
+    padding-top: 20rem;
+}
+/*Changing the style of ScrollBar*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius : 5px;
+  background: var(--color3); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color2); 
+}
+/*Responsive for Computer Laptop*/
+@media screen and (max-width:950px){
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding:1rem 2rem;
+    }
+    header .icon #bars, .button{
+        display: inline-block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color4);
+        border-top: .4rem solid rgba(0, 0, 0, .1);
+        padding: 1rem;
+        clip-path: polygon(0 0,100% 0, 100% 0, 0 0 );
+    }
+    header .navbar.active{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0% 100%);
+    }
+    header .navbar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        background-color: var(--color4);
+    }
+    .container .blog_box{
+        margin-left: 1in;
+    }
+    .blog_box .new{
+        line-height: 3.6rem;
+    }
+}
+/*Responsive for Nest Hub*/
+@media screen and (max-width:1024px){
+    .home{
+        top: 70px;
+    }
+}
+@media screen and (max-width:805px){
+    .contact{
+        display: none;
+    }
+}
+@media screen and (max-width:755px){
+    .container{
+        display: inline-block;
+    }
+    .container .blog_box{
+        margin-left: 0;
+        margin-top: 3rem;
+    }
+/* Responsive For Rest of Mobile */
+@media screen and (max-width:581px){
+    .skills{
+        display: inline-block;
+    }
+    .skill-bars{
+        width: 450px;
+    }
+    .home{
+        padding-top:10rem;
+    }
+}
+@media screen and (max-width:550px) {
+    .skill-bars{
+        width: 350px;
+    }
+}
+/*Responsive for Surface Duo*/
+@media screen and (max-width:548px){
+    section{
+        top: 100px;
+    }
+    .wrapper{
+        display: none;
+    }
+}
+@media screen and (max-width:430px){
+    .skill-bars{
+        width: 290px;
+    }
+    .qualification .matric{
+        height: 250px;
+        width: 250px;
+    }
+    .qualification .matric:hover{
+        height: 260px;
+        width: 260px;
+    }
+}
+@media screen and (max-width:380px) {
+    .home img, .container .blog_box{
+        width:220px;
+        height:220px;
+    }
+    .blog_box a{
+        font-size:2.7rem;
+    }
+    .blog_box h6{
+        font-size:2rem;
+        top:110px;
+    }
+}
+/* Responsive for Galaxy Fold */
+@media screen and (max-width:279px) {
+    html{
+        font-size: 30%;
+    }
+    .home{
+        top: 50px;
+    }
+    .home img{
+        height: 200px;
+        width: 200px;
+    }
+    .wrapper{
+        display: none;
+    }
+    .headingskill{
+        display: none;
+    }
+    .skill-bars{
+        display: none;
+    }
+    .qualification .matric{
+        height: 200px;
+        width: 200px;
+    }
+    .qualification .matric:hover{
+        height: 210px;
+        width: 210px;
+    }
+}
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]{
+    display:none;
+}
+img[src="https://cdn.000webhost.com/000webhost_war-message_small.png"]{
+    display:none;
+}
+.disclaimer{
+    display : none;
+}}
